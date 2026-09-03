@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Question Paper Generator</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="app-shell">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">AI</div>
+            <nav class="sidebar-nav">
+                <a href="/papers/" class="sidebar-icon" title="Home">🏠</a>
+                <a href="#" class="sidebar-icon" title="History">📄</a>
+                <a href="#" class="sidebar-icon active" title="Generator">💬</a>
+                <a href="#" class="sidebar-icon" title="Settings">⚙️</a>
+            </nav>
+        </aside>
+
+        <!-- Main area -->
+        <div class="main-area">
+            <header class="topbar">
+                <div></div>
+                <div class="topbar-right">
+                    <button id="theme-toggle" class="theme-btn" title="Toggle dark mode">🌙</button>
+                    <div class="avatar">👤</div>
+                </div>
+            </header>
+
+            <main class="container">
+                {% block content %}
+                {% endblock %}
+            </main>
+        </div>
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const htmlTag = document.documentElement;
+
+        const savedTheme = sessionStorage.getItem('theme') || 'dark';
+        htmlTag.setAttribute('data-theme', savedTheme);
+        updateButtonText(savedTheme);
+
+        toggleBtn.addEventListener('click', function () {
+            const currentTheme = htmlTag.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            htmlTag.setAttribute('data-theme', newTheme);
+            sessionStorage.setItem('theme', newTheme);
+            updateButtonText(newTheme);
+        });
+
+        function updateButtonText(theme) {
+            toggleBtn.textContent = theme === 'light' ? '🌙' : '☀️';
+        }
+    </script>
+</body>
+</html>

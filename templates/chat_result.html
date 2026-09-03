@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <div class="result-icon">✓</div>
+    <h2 class="result-title">Paper Generated Successfully!</h2>
+    <p class="result-text subtitle">Your question paper for {{ subject }} has been created.</p>
+
+    <a class="download-link" href="/media/generated_papers/{{ pdf_filename }}" download>📄 Download Question Paper (PDF)</a>
+    <a class="download-link" href="/media/generated_papers/{{ answer_pdf_filename }}" download>🔑 Download Answer Key (PDF)</a>
+    <a class="download-link" href="/media/generated_papers/{{ docx_filename }}" download>📝 Download Question Paper (Word)</a>
+
+    <br>
+    <div style="text-align:center; margin-top: 10px;">
+        <a href="/papers/">Generate Another Paper 🔄</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+AI Question Paper Generator - Final formatting update
+
+Final changes requested:
+1. Register No. row is aligned to the top-right, with the Register No. label immediately to the left of 14 number boxes.
+2. Part-A 1-mark MCQs use stable model-style row height so all 10 questions make proper use of page 1 and do not finish early leaving a large blank area. If more questions are selected, normal pagination continues to the next page.
+3. Answer Key header contains only College Name, Subject Code + Subject Name, and SET-I/SET-II. Register number and location/address details are removed.
+4. Answer Key sections and answers have cleaner spacing and centered PART headings for teacher readability.
+5. Existing question-paper formatting, boxed options, CO/KL columns, Part-B/Part-C flow, OR layout, signature/approval row, and Gemini generation flow are preserved.
+
+Run:
+python -m streamlit run app.py
+
+Keep a valid GEMINI_API_KEY in the project's .env file.
+
+
+GEMINI MODEL FIX: Set Gemini model to the requested `gemini-3.5-flash`. The common typo `gemini-3.5-flashs` is normalized automatically to `gemini-3.5-flash`.

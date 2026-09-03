@@ -1,0 +1,9 @@
+UPDATED FEATURES
+- Total marks can be 50, 70, 75, 100 or any positive value; no hard-coded 50.
+- Staff can freely set Part A/B/C question counts and marks. Generated paper follows the entered pattern.
+- Language mode: English, Tamil, or English + Tamil.
+- In Tamil mode, questions/options and visible exam labels are Tamil even when source PDF is English.
+- In bilingual mode, English and Tamil are shown together.
+- Added College Location field; Tamil mode uses Tamil translation in the header.
+- Part headings become PART-A / பகுதி - A, PART-B / பகுதி - B, PART-C / பகுதி - C according to language mode.
+- Answer key follows the selected language and has clean spacing for teacher correction.

@@ -1,0 +1,5 @@
+Updated on 2026-08-12.
+
+Main change: app.py now generates a question paper + answer key from uploaded PDF/DOCX study material.
+The original ZIP uploaded by the user was not modified.
+The .env file was intentionally not copied because it may contain an API key. Keep your existing .env file.

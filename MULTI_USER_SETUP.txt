@@ -1,0 +1,23 @@
+MULTI-USER CONFIGURATION
+========================
+
+This version keeps the existing question-paper generator UI and generation logic.
+It adds safe per-browser-session output folders so multiple users can generate
+papers at the same time without overwriting one another's DOCX files.
+
+IMPORTANT:
+- Streamlit already creates a separate session_state for each browser connection.
+- Uploaded files are kept in the individual Streamlit session.
+- Generated DOCX files are now written to generated_output/<session_id>/.
+- Do NOT commit the real .env/API key to GitHub.
+- For a public deployment, configure GEMINI_API_KEY as a server-side secret.
+
+Run locally:
+    python -m streamlit run app.py
+
+For deployment, use a host that supports multiple Streamlit sessions.
+The Gemini API key remains server-side; users never enter or see it.
+
+The app can handle simultaneous users subject to the Gemini API's quota/rate limits
+and the deployment server's CPU/RAM limits. More concurrent users may require a
+higher API quota and a stronger hosting plan.

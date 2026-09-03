@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <div class="progress-wrap">
+        <p class="progress-text">Question {{ step_number }} of {{ total_steps }}</p>
+        <div class="progress-dots">
+            {% for i in dots_range %}
+                {% if i <= step_number %}
+                    <span class="dot filled"></span>
+                {% else %}
+                    <span class="dot"></span>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <h2>{{ current_question }}</h2>
+    <p class="subtitle">Provide your answer below</p>
+    <form method="POST" action="/papers/chat/">
+        {% csrf_token %}
+        <input type="text" name="answer" placeholder="Type your answer here" autofocus required>
+        <button type="submit">Next →</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>Review Your Inputs</h2>
+    <p class="subtitle">Please review the details before generating</p>
+
+    <div class="summary-row">
+        <span class="summary-label">College</span>
+        <span class="summary-value">{{ answers.college_name }}</span>
+    </div>
+    <div class="summary-row">
+        <span class="summary-label">Course</span>
+        <span class="summary-value">{{ answers.course_name }}</span>
+    </div>
+    <div class="summary-row">
+        <span class="summary-label">Subject</span>
+        <span class="summary-value">{{ answers.subject }}</span>
+    </div>
+    <div class="summary-row">
+        <span class="summary-label">Subject Code</span>
+        <span class="summary-value">{{ answers.subject_code }}</span>
+    </div>
+    <div class="summary-row">
+        <span class="summary-label">Semester</span>
+        <span class="summary-value">{{ answers.semester }}</span>
+    </div>
+    <div class="summary-row">
+        <span class="summary-label">Exam Type</span>
+        <span class="summary-value">{{ answers.exam_type }}</span>
+    </div>
+    <div class="summary-row">
+        <span class="summary-label">Exam Date</span>
+        <span class="summary-value">{{ answers.exam_date }}</span>
+    </div>
+    <div class="summary-row">
+        <span class="summary-label">Topics</span>
+        <span class="summary-value">{{ answers.topics }}</span>
+    </div>
+    <div class="summary-row">
+        <span class="summary-label">Difficulty</span>
+        <span class="summary-value">{{ answers.difficulty }}</span>
+    </div>
+
+    <br>
+    <form method="POST" action="/papers/chat/finish/">
+        {% csrf_token %}
+        <button type="submit">Generate Paper ✨</button>
+    </form>
+</div>
+{% endblock %}

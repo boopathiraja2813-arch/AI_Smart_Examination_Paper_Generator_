@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>Create Your Account</h2>
+    <p class="subtitle">Sign up to get started</p>
+    <form method="POST" action="/accounts/signup/">
+        {% csrf_token %}
+        <label>Username</label>
+        <input type="text" name="username" placeholder="Enter your username" required>
+
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Enter your email" required>
+
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Create a password" required>
+
+        <button type="submit">Sign Up</button>
+    </form>
+    <p class="footer-link">Already have an account? <a href="/accounts/login/">Login</a></p>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>Welcome Back!</h2>
+    <p class="subtitle">Login to your account to continue</p>
+    <form method="POST" action="/accounts/login/">
+        {% csrf_token %}
+        <label>Username</label>
+        <input type="text" name="username" placeholder="Enter your username" required>
+
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Enter your password" required>
+
+        <button type="submit">Login</button>
+    </form>
+    <p class="footer-link">Don't have an account? <a href="/accounts/signup/">Sign up</a></p>
+</div>
+{% endblock %}

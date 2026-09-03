@@ -1,0 +1,18 @@
+AI Question Paper Generator - V4 formatting update
+
+Updated Word question-paper layout to match the supplied Excel College model:
+- One centered Register No. row with label on the left and exactly 14 boxes.
+- Bold centered college name and location/header details.
+- Centered PART-A, PART-B and PART-C headings.
+- Bordered Date / Time / Maximum Marks row.
+- Part A MCQs use bordered question area and bordered A/B/C/D option cells.
+- Part B and Part C continue directly without artificial blank gaps.
+- Part C uses a vertically merged question number with A / OR / B rows.
+- Signature / approval labels are in one bordered five-column row.
+- Page 1 contains Part A; page 2 continues with Part B, Part C and approval row.
+- User-selected question counts and marks still control the generated paper.
+
+Run:
+python -m streamlit run app.py
+
+Keep the existing .env file in the project folder with a valid GEMINI_API_KEY.

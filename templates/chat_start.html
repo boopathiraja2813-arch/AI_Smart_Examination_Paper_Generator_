@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <div class="welcome-icon">🤖</div>
+    <h2 class="welcome-title">Welcome to<br>AI Question Paper Generator</h2>
+    <p class="welcome-text">Generate exam question papers instantly with the power of AI</p>
+    <form method="POST" action="/papers/chat/reset/">
+        {% csrf_token %}
+        <button type="submit">Start →</button>
+    </form>
+</div>
+{% endblock %}
