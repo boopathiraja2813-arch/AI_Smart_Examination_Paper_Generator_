@@ -1487,7 +1487,34 @@ div.stButton > button[kind="primary"]:hover {
         font-size: 11px;
     }
 }
+/* DATE INPUT FIX */
+[data-testid="stSidebar"] [data-testid="stDateInput"] > div {
+    background: #eef4f8 !important;
+    border: 1px solid #102a43 !important;
+}
 
+[data-testid="stSidebar"] [data-testid="stDateInput"] input {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+    background: #eef4f8 !important;
+    font-weight: 700 !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stDateInput"] svg {
+    color: #102a43 !important;
+    fill: #102a43 !important;
+}
+/* TOP RIGHT WHITE AREA — ONLY 6% */
+[data-testid="stHeader"] {
+    background: transparent !important;
+    border-bottom: none !important;
+}
+
+[data-testid="stToolbar"] {
+    background: transparent !important;
+    width: 6vw !important;
+    max-width: 6vw !important;
+}
 
 /* =========================================================
    FINAL VISIBILITY FIXES — ONLY FORM CONTROLS / CALCULATED MARKS
